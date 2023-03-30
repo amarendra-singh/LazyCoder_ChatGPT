@@ -2,54 +2,64 @@
 
 LazyCoder ChatGPT is a chatbot that uses the GPT-3.5 architecture to provide intelligent and conversational responses to user input. This chatbot is built using OpenAI's GPT-3.5 API, and can be used to simulate conversations with a computer program.
 
-Installation
-To use the LazyCoder ChatGPT chatbot, you will need to have an OpenAI API key. You can sign up for an API key at https://openai.com/signup/. Once you have your API key, you can clone the LazyCoder ChatGPT repository from GitHub:
+# Table of Contents
 
-bash
-Copy code
-git clone https://github.com/amarendra-singh/LazyCoder_ChatGPT.git
-Next, create a virtual environment and install the required packages:
+* Features
+* Prerequisites
+* Getting Started
+* Technologies Used
+* Installation
+* Usage
+* Contributing
+* License
 
-bash
-Copy code
-cd LazyCoder_ChatGPT
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-Finally, set your OpenAI API key as an environment variable:
+# Features
+* Provides intelligent and conversational responses to user input
+* Uses GPT-3.5 architecture to simulate conversations with a computer program
+* Built using OpenAI's GPT-3.5 API
+* Written in Python
 
-arduino
-Copy code
-export OPENAI_API_KEY=<your-api-key>
-Usage
-To start the LazyCoder ChatGPT chatbot, run the following command:
+## Prerequisites
+Before you can get started with the project, you'll need to have the following installed on your machine:
 
-Copy code
-python chatbot.py
-The chatbot will start running and you can begin chatting with it by entering text into the console. The chatbot will respond to your input with intelligent and conversational responses.
+* Python
+* PIP
+* 
+## Technologies used
+* Django
+* OpenAI GPT-3.5 API
+* TailWind CSS
 
-To exit the chatbot, type "quit" or "exit" into the console.
+## Getting Started
+To get started with the project, simply clone or download the repository to your local machine and navigate to the directory where the repository is located. Then, run the following command in your terminal or command prompt:
 
-Contributing
-If you want to contribute to the development of LazyCoder ChatGPT, you can fork the repository and create a new branch for your changes:
+## Installation
+* If you wish to run your own build, first ensure you have python globally installed in your computer. If not, you can get python [here](https://www.python.org").
+* After doing this, confirm that you have installed virtualenv globally as well. If not, run this:
+    ```bash
+        $ pip install virtualenv
+        
+* #### Dependencies
+    1. Create and fire up your virtual environment:
+        ```bash
+            $ virtualenv  venv -p python3
+            $ source venv/bin/activate
+        ```
+    2. Install the dependencies needed to run the app:
+        ```bash
+            $ pip install -r requirements.txt
+    3. Make those migrations work
+        ```bash
+            $ python manage.py makemigrations
+            $ python manage.py migrate
+        ```
 
-bash
-Copy code
-git clone https://github.com/amarendra-singh/LazyCoder_ChatGPT.git
-cd LazyCoder_ChatGPT
-git checkout -b my-feature-branch
-Make your changes to the code and commit them:
-
-sql
-Copy code
-git add .
-git commit -m "Add my feature"
-Push your changes to your forked repository:
-
-perl
-Copy code
-git push origin my-feature-branch
-Finally, create a pull request from your feature branch to the main repository. Your changes will be reviewed by the maintainers and merged into the main repository if they are approved.
-
-License
-LazyCoder ChatGPT is released under the MIT License. See the LICENSE file for more information.
+* #### Run It
+    Fire up the server using this one simple command:
+    ```bash
+        $ python manage.py runserver
+    ```
+    You can now access the file api service on your browser by using
+    ```
+        http://localhost:8000/
+    ```

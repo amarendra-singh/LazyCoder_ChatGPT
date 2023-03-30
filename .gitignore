@@ -92,7 +92,8 @@ ipython_config.py
 #Pipfile.lock
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
+core/__pypackages__/
+lazycoder/__pypackages__/
 
 # Celery stuff
 celerybeat-schedule
@@ -109,7 +110,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-accounts/migrations
+core/migrations
 
 # Spyder project settings
 .spyderproject

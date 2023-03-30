@@ -9,9 +9,6 @@ LazyCoder ChatGPT is a chatbot that uses the GPT-3.5 architecture to provide int
 * Getting Started
 * Technologies Used
 * Installation
-* Usage
-* Contributing
-* License
 
 # Features
 * Provides intelligent and conversational responses to user input
@@ -24,7 +21,7 @@ Before you can get started with the project, you'll need to have the following i
 
 * Python
 * PIP
-* 
+
 ## Technologies used
 * Django
 * OpenAI GPT-3.5 API

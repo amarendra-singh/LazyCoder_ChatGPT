@@ -1,0 +1,1 @@
+# LazyCoder_ChatGPT

@@ -44,7 +44,7 @@ def home(request):
             try:
                 response=openai.Completion.create(
 					engine='text-davinci-003',
-                    prompt=f'Respond only with code, Fix this {code} in {lang} language.',
+                    prompt=f'Respond only with code,{code} in {lang} language.',
                     temperature=0,
                     max_tokens=1000,
                     top_p=1.0,
@@ -53,6 +53,8 @@ def home(request):
                 )
 
                 print("Code ", response)
+                response=(response["choices"][0]["text"]).strip()
+                print("New response \n",response)
                 return render(request, 'home.html',{'lang_list':lang_list,'code':response,'lang':lang})
 
             except Exception as e:

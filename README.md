@@ -1,3 +1,4 @@
+# Under Development
 # LazyCoder_ChatGPT
 
 LazyCoder ChatGPT is a chatbot that uses the GPT-3.5 architecture to provide intelligent and conversational responses to user input. This chatbot is built using OpenAI's GPT-3.5 API, and can be used to simulate conversations with a computer program.

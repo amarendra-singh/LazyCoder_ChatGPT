@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL='core.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -136,3 +138,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #OpenAI API
 OPENAI_API=config('OPENAI_API')
+
+#AWS Configuration
+AWS_ACCESS_KEY_ID=config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY=config('AWS_SECRET_ACCESS_KEY')
+
+#S3 Configuration
+AWS_STORAGE_BUCKET_NAME=config('AWS_STORAGE_BUCKET_NAME')
+DEFAULT_FILE_STORAGE=config('DEFAULT_FILE_STORAGE')
+STATICFILES_STORAGE=config('STATICFILES_STORAGE')
+AWS_S3_CUSTOM_DOMAIN='%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_FILE_OVERWRITE=False

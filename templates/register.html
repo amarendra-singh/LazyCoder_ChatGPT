@@ -1,0 +1,23 @@
+{% extends 'includes/base.html' %}
+
+{% block content %}
+
+
+  <form class="w-full max-w-lg mx-auto mt-10" method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+    {% for form in forms %}
+
+    <label for="{{form.label}}" class="block mt-5 mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.label}}</label>
+    <div class="fieldcss"></div>
+    {{form}}
+
+    <!-- <input id="{{form.label}}" rows="1" name="{{form.label}}" class="inline-block p-2.5 w-full  text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none" placeholder="{{form.label}}"></textarea> -->
+    </div>
+      {% endfor %}
+    
+    <br>
+    <button class="bg-white mt-5 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Submit</button>
+  </form>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+.fieldcss{
+  display: inline-block;
+  padding: 2.5px;
+  width: 100%;
+  color: #1a202c; /* text-gray-900 */
+  background-color: #f7fafc; /* bg-gray-50 */
+  border-radius: 0.375rem; /* rounded-lg */
+  border-width: 1px;
+  border-color: #e2e8f0; /* border-gray-300 */
+  outline-color: #2563eb; /* focus:ring-blue-500 */
+  outline-width: 2px;
+  transition-property: border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+}
+
+.fieldcss:focus {
+  border-color: #2563eb; /* focus:border-blue-500 */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.dark .fieldcss{
+  background-color: #4a5568; /* dark:bg-gray-700 */
+  color: #cbd5e0; /* dark:text-white */
+  border-color: #2d3748; /* dark:border-gray-600 */
+  ::placeholder {
+    color: #a0aec0; /* dark:placeholder-gray-400 */
+  }
+}
+
+.dark .fieldcss:focus {
+  outline-color: #2563eb; /* dark:focus:ring-blue-500 */
+}

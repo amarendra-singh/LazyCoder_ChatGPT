@@ -1,8 +1,40 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib import messages
 from lazycoder.settings import OPENAI_API
 import openai
+from . models import User,Profile
+from . forms import UserForm
 # Create your views here.
+
+def register(request):
+    if request.method == 'POST':
+        forms = UserForm(request.POST)
+        if forms.is_valid():
+            username=forms.cleaned_data['username']
+            email=forms.cleaned_data['email']
+            firstname=forms.cleaned_data['firstname']
+            lastname=forms.cleaned_data['lastname']
+            password=forms.cleaned_data['password']
+
+            user=User.objects.create_user(username=username,email=email,firstname=firstname,lastname=lastname,password=password)
+            current_user=forms.save(commit=False)
+            profileUser=Profile.objects.create()
+            user.save()
+
+
+            messages.error(request, 'Your account has been registered successfully')
+            return redirect('register')
+        else:
+            print("Invalid form")
+            print(forms.errors)
+
+    else:
+        forms=UserForm
+    context={'forms':forms}
+
+    return render(request, 'register.html', context)
+
+
 def home(request):
     lang_list=['abap', 'abnf', 'actionscript', 'ada', 'agda', 'al', 'antlr4', 'apacheconf', 'apex', 'apl', 'applescript', 'aql', 
                'arduino', 'arff', 'armasm', 'arturo', 'asciidoc', 'asm6502', 'asmatmel', 'aspnet', 'autohotkey', 'autoit', 'avisynth', 
@@ -68,3 +100,6 @@ def home(request):
         }
 
     return render(request, 'home.html',context)
+
+def profile(request):
+    return render(request)
